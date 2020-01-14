@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
   "name": "ElasticBeanstalk UI Support",
-  "version": "0.1.5",
-  "description": "ElasticBeanstalk UI Support Extension",
+  "version": "1.0.4",
+  "description": "AWS ElasticBeanstalk UI Support Extension",
   "content_scripts": [{
     "matches": [
       "https://*.console.aws.amazon.com/elasticbeanstalk/*"
@@ -10,9 +10,5 @@
     "js": [
       "content.js"
     ]
-  }],
-  "permissions": [
-    "contextMenus",
-    "tabs"
-  ]
+  }]
 }

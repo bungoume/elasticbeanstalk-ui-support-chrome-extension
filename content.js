@@ -15,6 +15,7 @@ const popoverEnvironment = (e) => {
   const ec2_base = `/ec2/v2/home?region=${region}#Instances:tag:elasticbeanstalk:environment-id=${envId}`;
   const alb_base = `/ec2/v2/home?region=${region}#LoadBalancers:tag:elasticbeanstalk:environment-id=${envId}`;
   const asg_base = `/ec2/autoscaling/home?region=${region}#AutoScalingGroups:view=details;filter=${envId}`;
+  const cfn_base = `/cloudformation/home?region=${region}#/stacks?filteringText=awseb-${envId}-stack`;
 
   const style = "top: " + e.pageY + "px; left: " + e.pageX + "px; min-width: 200px;";
 
@@ -26,7 +27,7 @@ const popoverEnvironment = (e) => {
         + '<span class="ng-binding"><a href="'+ec2_base+'" target="_blank">EC2 Instances</a></span><br>'
         + '<span class="ng-binding"><a href="'+alb_base+'" target="_blank">Load Balancer</a></span><br>'
         + '<span class="ng-binding"><a href="'+asg_base+'" target="_blank">Auto Scaling Group</a></span><br>'
-        + '<span class="ng-binding">CloudFormation(TBD)</span>'
+        + '<span class="ng-binding"><a href="'+cfn_base+'" target="_blank">CloudFormation</a></span>'
       + '</div></div>'
   );
   popoverElement = document.body.appendChild(element);
